@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Let’s Learn the Constitution</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Global Reset */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Roboto', sans-serif; }
+
+        body {
+            background-color: #F4F4F9; /* Soft background */
+        }
+
+        /* Header Styling */
+        header { 
+            display: flex; justify-content: space-between; align-items: center;
+            padding: 20px 50px; background: linear-gradient(to right, #FF6A13, #34A853); color: white;
+            position: relative;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        header h1 { font-size: 2.5rem; font-weight: 600; cursor: pointer; }
+        header nav a {
+            text-decoration: none; color: white; margin: 0 15px;
+            font-size: 1.1rem; font-weight: 500; transition: color 0.3s ease;
+        }
+        header nav a:hover { color: #FF9C00; }
+
+        /* Hero Section */
+        .hero {
+            padding: 6rem 3rem; text-align: center;
+            background-color: #FFFFFF;
+            color: #333; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 20px; margin-top: 30px;
+            animation: fadeIn 1s ease-out;
+        }
+        .hero h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 1.5rem; color: #FF6A13; }
+        .hero p { font-size: 1.3rem; margin-bottom: 2rem; max-width: 700px; margin: 0 auto; color: #333; }
+        .hero button {
+            padding: 1rem 2.5rem; font-size: 1.2rem; color: #333; background-color: #FF6A13;
+            border: none; border-radius: 30px; cursor: pointer; transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .hero button:hover { transform: scale(1.1); background-color: #FF9C00; }
+
+        /* About Section */
+        .about {
+            padding: 3rem 2rem; text-align: center; margin-top: 50px;
+            background-color: #34A853;
+            color: white;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 20px;
+        }
+        .about h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 1.5rem; }
+        .about p {
+            font-size: 1.2rem; line-height: 1.6; max-width: 800px; margin: 0 auto;
+            background: rgba(255, 255, 255, 0.9); padding: 2rem; border-radius: 20px; 
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: #333;
+        }
+
+        /* Topics Section */
+        .topics {
+            background-color: #FFFFFF; padding: 4rem 2rem; margin-top: 50px;
+        }
+        .topics h2 { font-size: 2.5rem; font-weight: 700; color: #34A853; margin-bottom: 2rem; text-align: center; }
+        .topics-grid {
+            display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.5rem;
+            transition: all 0.3s ease;
+        }
+        .topic-card {
+            background: #FF6A13; border-radius: 15px; padding: 2rem;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); text-align: center;
+            font-size: 1.2rem; font-weight: 600; color: white; cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .topic-card:hover {
+            transform: translateY(-8px); box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Scroll to Top Button */
+        .scroll-to-top {
+            position: fixed; bottom: 30px; right: 30px;
+            background-color: #FF6A13; color: white; padding: 15px 20px;
+            border-radius: 50%; border: none; cursor: pointer;
+            font-size: 1.5rem; display: none; transition: opacity 0.3s ease;
+        }
+        .scroll-to-top:hover { background-color: #FF9C00; }
+
+        footer {
+            text-align: center; padding: 2rem; background-color: #34A853; color: white;
+            margin-top: 50px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+        .fade-in { animation: fadeIn 1s ease-out; }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header>
+    <h1 onclick="scrollToSection('hero')">Let’s Learn the Constitution</h1>
+    <nav>
+        <a href="#" onclick="scrollToSection('about')">About</a>
+        <a href="#" onclick="scrollToSection('topics')">Topics</a>
+        <a href="#">Resources</a>
+        <a href="#" onclick="scrollToSection('hero')">Home</a>
+    </nav>
+</header>
+
+<!-- About Section (moved up) -->
+<div class="about fade-in" id="about">
+    <h2>About Us</h2>
+    <p>We simplify the Constitution, making it easier to understand and more interesting to explore through interactive content. Our goal is to provide a comprehensive learning experience using simple language and engaging visuals to make the complex ideas of the Constitution accessible to all. We hope to educate citizens, raise awareness, and promote constitutional literacy across all age groups.</p>
+</div>
+
+<!-- Hero Section (moved down) -->
+<div class="hero fade-in" id="hero">
+    <h1>Understanding the Indian Constitution</h1>
+    <p>Explore, learn, and gain a deeper understanding of the Constitution of India in a simple and engaging way.</p>
+    <button onclick="scrollToSection('topics')">Start Learning</button>
+</div>
+
+<!-- Topics Section (moved down) -->
+<div class="topics fade-in" id="topics">
+    <h2>Explore Key Topics</h2>
+    <div class="topics-grid">
+        <div class="topic-card">The Preamble</div>
+        <div class="topic-card">Fundamental Rights</div>
+        <div class="topic-card">Directive Principles</div>
+        <div class="topic-card">The Structure of Government</div>
+        <div class="topic-card">Amendment Process</div>
+        <div class="topic-card">Fundamental Duties</div>
+    </div>
+</div>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-to-top" id="scrollToTop" onclick="scrollToTop()">↑</button>
+
+<!-- Footer -->
+<footer>
+    <p>&copy; 2024 Let’s Learn the Constitution. All rights reserved.</p>
+</footer>
+
+<script>
+    // Smooth Scrolling to Sections
+    function scrollToSection(sectionID) {
+        document.getElementById(sectionID).scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // Scroll to Top Function
+    window.onscroll = function() {
+        var button = document.getElementById("scrollToTop");
+        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+            button.style.display = "block";
+        } else {
+            button.style.display = "none";
+        }
+    };
+
+    function scrollToTop() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
+</script>
+
+</body>
+</html>
